@@ -12,10 +12,10 @@ export default function SignInButton() {
     }
 
     return (
-        <button onClick={onSignIn} disabled={clicked} className="hello-btn-dark">
+        <button onClick={onSignIn} disabled={clicked} className="hello-btn-black-on-light">
             {clicked
                 ? <img src="https://cdn.hello.coop/images/spin-light.svg" height="25" width="25" />
-                : 'ō Continue with Hellō'}
+                : (<>ō&nbsp;&nbsp;&nbsp;Continue with Hellō</>)}
         </button>
     )
 }

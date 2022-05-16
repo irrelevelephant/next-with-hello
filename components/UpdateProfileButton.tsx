@@ -12,7 +12,7 @@ export default function UpdateProfileButton() {
 
     return (
         <button onClick={onSignIn} className="hello-btn-white-and-static">
-            ō Update Profile with Hellō
+            ō&nbsp;&nbsp;&nbsp;Update Profile with Hellō
         </button>
     )
 }
