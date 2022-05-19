@@ -16,9 +16,11 @@ type Claims = {
 const defaultReturnTo = '/'
 
 const callbackRoute = async (req: NextApiRequest, res: NextApiResponse) => {
-    const { query: { idToken } } = req
+    const { query: { idToken: idTokenParam } } = req
 
-    if (typeof idToken !== 'string') {
+    const idToken = Array.isArray(idTokenParam) ? idTokenParam[0] : idTokenParam
+
+    if (!idToken) {
         res.status(400).json({ message: 'Missing id_token parameter' })
         return
     }
