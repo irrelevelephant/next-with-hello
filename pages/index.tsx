@@ -30,7 +30,7 @@ export default function Home() {
             <h2>Steps to test the functionality:</h2>
 
             <ol>
-                <li>Click <b>Login</b></li>
+                <li>Click <b>Login</b> (on the top right)</li>
                 <li>Click <b>Continue with Hellō</b></li>
                 <li>
                     Click home and click profile again, notice how your session is being

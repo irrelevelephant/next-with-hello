@@ -21,3 +21,10 @@ It is based off the <a href="https://github.com/hellocoop/greenfielddemo">Single
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/irrelevelephant/next-with-hello&project-name=next-with-hello&repository-name=next-with-hello)
 
 Use the [Hellō developer console](https://console.hello.dev/) to create your own Hellō application. The client ID is configured via environment variables.
+
+## Development
+
+1. Clone the repo/deploy your own. (You'll have to fork the repo if you want to submit PRs)
+2. `yarn install`
+  - You might have to update node with `nvm install --lts` and `nvm use --lts`
+3. `yarn dev`

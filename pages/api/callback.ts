@@ -16,7 +16,16 @@ type Claims = {
 const defaultReturnTo = '/'
 
 const callbackRoute = async (req: NextApiRequest, res: NextApiResponse) => {
-    const { query: { idToken: idTokenParam } } = req
+    const { query: { idToken: idTokenParam, error: errorParam } } = req
+
+    if (errorParam) {
+        if (errorParam === "access_denied") {
+            res.status(403).json({ message: 'Access denied received from Hellō' })
+            return
+        }
+        res.status(400).json({ message: errorParam })
+        return
+    }
 
     const idToken = Array.isArray(idTokenParam) ? idTokenParam[0] : idTokenParam
 
