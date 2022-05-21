@@ -18,17 +18,17 @@ const defaultReturnTo = '/'
 const callbackRoute = async (req: NextApiRequest, res: NextApiResponse) => {
     const { query: { idToken: idTokenParam, error: errorParam } } = req
 
-    if (errorParam) {
-        if (errorParam === "access_denied") {
+    const error = Array.isArray(errorParam) ? errorParam[0] : errorParam
+    if (error) {
+        if (error === 'access_denied') {
             res.status(403).json({ message: 'Access denied received from Hellō' })
             return
         }
-        res.status(400).json({ message: errorParam })
+        res.status(400).json({ message: error })
         return
     }
 
     const idToken = Array.isArray(idTokenParam) ? idTokenParam[0] : idTokenParam
-
     if (!idToken) {
         res.status(400).json({ message: 'Missing id_token parameter' })
         return
