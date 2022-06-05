@@ -1,4 +1,5 @@
 import Layout from 'components/Layout'
+import SignInButton from 'components/SignInButton'
 
 export default function Home() {
     return (
@@ -17,6 +18,22 @@ export default function Home() {
                 example, which uses a signed and encrypted cookie to store session data.
             </p>
 
+            <p>
+                To authenticate with Hellō, click the button below.
+            </p>
+
+            <div className="login">
+                <SignInButton />
+            </div>
+            <style jsx>{`
+            .login {
+              display: flex;
+              justify-content: center;
+              margin: 0 auto;
+              padding: 1rem;
+            }
+          `}</style>
+
             <h2>Features</h2>
 
             <ul>
@@ -30,7 +47,6 @@ export default function Home() {
             <h2>Steps to test the functionality:</h2>
 
             <ol>
-                <li>Click <b>Login</b> (on the top right)</li>
                 <li>Click <b>Continue with Hellō</b></li>
                 <li>
                     Click home and click profile again, notice how your session is being
