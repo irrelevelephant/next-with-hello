@@ -38,7 +38,7 @@ const callbackRoute = async (req: NextApiRequest, res: NextApiResponse) => {
 
         const unsealedState: Record<string, string> = await unsealData(state, sessionOptions)
         const { nonce } = unsealedState
-        sourceUrl ||= unsealedState.sourceUrl
+        sourceUrl = unsealedState.sourceUrl
 
         try {
             const { sub, name, email }: Record<string, string> = await fetch(
