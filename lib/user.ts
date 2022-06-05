@@ -19,7 +19,7 @@ export default function useUser({ redirect = true } = {}) {
         if (!user || !isReady) return
 
         if (!user.isLoggedIn && redirect) {
-            push('/api/login?' + new URLSearchParams({ returnTo: asPath }))
+            push('/api/login?' + new URLSearchParams({ sourceUrl: asPath }))
         }
     }, [user, isReady, asPath])
 

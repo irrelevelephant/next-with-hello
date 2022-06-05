@@ -6,6 +6,7 @@
         "start": "next start"
     },
     "dependencies": {
+        "cors": "^2.8.5",
         "iron-session": "latest",
         "next": "latest",
         "react": "^17.0.2",
@@ -14,6 +15,7 @@
         "uuid": "^8.3.2"
     },
     "devDependencies": {
+        "@types/cors": "^2.8.12",
         "@types/react": "^17.0.34",
         "@types/uuid": "^8.3.4",
         "typescript": "^4.4.4"

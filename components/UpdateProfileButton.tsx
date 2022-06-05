@@ -8,7 +8,7 @@ export default function UpdateProfileButton() {
     const onSignIn = () => {
         setClicked(true)
         push('/api/login?' + new URLSearchParams({
-            returnTo: asPath,
+            sourceUrl: asPath,
             updateProfile: true.toString()
         }))
     }

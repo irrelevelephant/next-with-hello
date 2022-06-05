@@ -9,7 +9,8 @@ export const sessionOptions: IronSessionOptions = {
     cookieName: 'next-with-hello',
     // secure: true should be used in production (HTTPS) but can't be used in development (HTTP)
     cookieOptions: {
-        secure: process.env.NODE_ENV === 'production'
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'strict'
     }
 }
 
@@ -18,6 +19,6 @@ declare module 'iron-session' {
     interface IronSessionData {
         user?: User,
         nonce?: string,
-        returnTo?: string
+        sourceUrl?: string
     }
 }
