@@ -13,6 +13,16 @@ const defaultScopes = ['openid', 'name', 'email']
 const loginRoute = async (req: NextApiRequest, res: NextApiResponse) => {
     const { sourceUrl, updateProfile } = req.query
 
+    if (!config.helloClientId) {
+        res.redirect('https://quickstart.hello.dev/?' + new URLSearchParams({
+            ...(process.env.NODE_ENV === 'production'
+                ? {}
+                : { response_uri: `${config.baseUrl}/api/quickstart` }),
+            suffix: 'Next.js App'
+        }))
+        return
+    }
+
     const nonce = uuidv4()
     req.session.nonce = nonce
     req.session.sourceUrl = Array.isArray(sourceUrl) ? sourceUrl[0] : sourceUrl
