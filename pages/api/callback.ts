@@ -7,7 +7,7 @@ import config from 'lib/config'
 import { consentCors, consentBaseUrl } from 'lib/consent'
 import type { User } from 'lib/user'
 
-const defaultReturnTo = '/'
+const defaultReturnTo = '/profile-sg'
 
 const callbackRoute = async (req: NextApiRequest, res: NextApiResponse) => {
     await consentCors(req, res)

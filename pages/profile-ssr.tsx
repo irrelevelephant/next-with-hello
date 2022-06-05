@@ -35,8 +35,8 @@ export const getServerSideProps = withIronSessionSsr(async ({ req, res }) => {
 
     if (!user) {
         // when redirecting from the consent URL, we won't have the session cookie due to strict SameSite
-        // to prevent an infinite redirect loop, we redirect to home instead
-        res.setHeader('location', '/api/login?' + new URLSearchParams({ sourceUrl: '/' }))
+        // to prevent an infinite redirect loop, we redirect to /profile-sg instead
+        res.setHeader('location', '/api/login?' + new URLSearchParams({ sourceUrl: '/profile-sg' }))
         res.statusCode = 302
         res.end()
         return {
