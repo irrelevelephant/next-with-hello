@@ -20,7 +20,13 @@ It is based off the <a href="https://github.com/hellocoop/greenfielddemo">Single
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/irrelevelephant/next-with-hello&project-name=next-with-hello&repository-name=next-with-hello)
 
-Use the [Hellō developer console](https://console.hello.dev/) to create your own Hellō application. The client ID is configured via environment variables.
+Several environment variables should be configured in Vercel:
+
+1. If you have not yet set the `HELLO_CLIENT_ID` environment variable, you'll be prompted to create a new [quickstart application](http://quickstart.hello.dev/) upon login. In development, the client ID will be automatically written to the `.env` files. In production, you'll need to set the `HELLO_CLIENT_ID` environment variable to the client ID provided by Hellō and redeploy.
+2. Set the `BASE_URL` environment variable to your app's Vercel URL, e.g. `https://next-with-hello.vercel.app`.
+3. Set the `SECRET_COOKIE_PASSWORD` to a random string.
+
+You can view/configure your Hellō application via the [Hellō developer console](https://console.hello.dev/).
 
 ## Development
 
