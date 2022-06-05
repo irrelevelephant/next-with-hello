@@ -26,7 +26,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         const lines = (await readFile(envFilePath)).toString().split('\n')
         const clientIdIndex = lines.findIndex((line) => line.split('=')[0] === 'HELLO_CLIENT_ID')
         if (clientIdIndex < 0) {
-            lines.concat(['\n', `HELLO_CLIENT_ID=${clientId}`])
+            lines.push(`HELLO_CLIENT_ID=${clientId}`)
         } else {
             lines[clientIdIndex] = lines[clientIdIndex].replace(/^(.*)=(.*)$/, `$1=${clientId}`)
         }
