@@ -8,7 +8,6 @@ export default function Layout({ children }: PropsWithChildren<{}>) {
         <>
             <Head>
                 <title>With Hellō</title>
-                <link href="https://cdn.hello.coop/css/hello-button.css" rel="stylesheet" />
             </Head>
             <style jsx global>{`
             *,

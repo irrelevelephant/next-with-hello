@@ -2,8 +2,6 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { resolve } from 'path'
 import { readFile, writeFile } from 'node:fs/promises'
 
-import config from 'lib/config'
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     if (process.env.NODE_ENV === 'production') {
         res.status(404).end()
@@ -33,5 +31,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         await writeFile(envFilePath, lines.join('\n'))
     }))
 
-    res.redirect(303, config.baseUrl)
+    res.redirect(303, process.env.HELLO_BASE_URL as string)
 }

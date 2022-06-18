@@ -3,20 +3,21 @@
     "scripts": {
         "build": "next build",
         "dev": "next dev",
-        "start": "next start"
+        "start": "next start",
+        "typecheck": "tsc --pretty --noEmit"
     },
     "dependencies": {
         "cors": "^2.8.5",
         "iron-session": "latest",
-        "next": "latest",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "swr": "^1.0.1",
+        "next": "^12.1.6",
+        "nextjs-hello": "^0.1.1",
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0",
         "uuid": "^8.3.2"
     },
     "devDependencies": {
         "@types/cors": "^2.8.12",
-        "@types/react": "^17.0.34",
+        "@types/react": "^18.0.12",
         "@types/uuid": "^8.3.4",
         "typescript": "^4.4.4"
     }

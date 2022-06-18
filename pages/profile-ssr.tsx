@@ -1,10 +1,7 @@
 import { InferGetServerSidePropsType } from 'next'
-import { withIronSessionSsr } from 'iron-session/next'
+import { withHelloSsr, getUser, UpdateProfileButton } from 'nextjs-hello'
 
 import Layout from 'components/Layout'
-import { sessionOptions } from 'lib/session'
-import UpdateProfileButton from 'components/UpdateProfileButton'
-import type { User } from 'lib/user'
 
 export default function SsrProfile({ user }: InferGetServerSidePropsType<typeof getServerSideProps>) {
     return (
@@ -30,25 +27,8 @@ export default function SsrProfile({ user }: InferGetServerSidePropsType<typeof 
     )
 }
 
-export const getServerSideProps = withIronSessionSsr(async ({ req, res }) => {
-    const user = req.session.user
-
-    if (!user) {
-        res.setHeader('location', '/api/login?' + new URLSearchParams({ sourceUrl: '/profile-ssr' }))
-        res.statusCode = 302
-        res.end()
-        return {
-            props: {
-                user: {
-                    isLoggedIn: false
-                } as User
-            }
-        }
+export const getServerSideProps = withHelloSsr(async ({ req }) => ({
+    props: {
+        user: getUser(req)
     }
-
-    return {
-        props: {
-            user
-        }
-    }
-}, sessionOptions)
+}), { sourceUrl: '/profile-ssr' })

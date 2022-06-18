@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-
-import useUser from 'lib/user'
+import { useUser } from 'nextjs-hello'
 
 export default function Header() {
     const { user } = useUser({ redirect: false })
@@ -38,7 +36,7 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li>
-                                <a href="/api/logout">
+                                <a href="/api/auth/logout">
                                     Logout
                                 </a>
                             </li>

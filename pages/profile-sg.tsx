@@ -1,7 +1,5 @@
 import Layout from 'components/Layout'
-
-import useUser from 'lib/user'
-import UpdateProfileButton from 'components/UpdateProfileButton'
+import { useUser, UpdateProfileButton } from 'nextjs-hello'
 
 export default function SgProfile() {
     const { user } = useUser()
@@ -14,7 +12,7 @@ export default function SgProfile() {
                 <a href="https://nextjs.org/docs/basic-features/pages#static-generation-recommended">
                     Static Generation (SG)
                 </a>{' '}
-                and the <a href="/api/user">/api/user</a> route (using{' '}
+                and the <a href="/api/auth/user">/api/auth/user</a> route (using{' '}
                 <a href="https://github.com/vercel/swr">vercel/SWR</a>)
             </h2>
 

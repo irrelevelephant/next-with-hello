@@ -1,5 +1,5 @@
 import Layout from 'components/Layout'
-import SignInButton from 'components/SignInButton'
+import { SignInButton } from 'nextjs-hello'
 
 export default function Home() {
     return (
