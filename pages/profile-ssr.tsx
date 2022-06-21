@@ -31,4 +31,4 @@ export const getServerSideProps = withHelloSsr(async ({ req }) => ({
     props: {
         user: getUser(req)
     }
-}), { sourceUrl: '/profile-ssr' })
+}), { sourceRoute: '/profile-ssr' })

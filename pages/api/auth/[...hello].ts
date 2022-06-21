@@ -1,3 +1,1 @@
-import { handleAuth } from 'nextjs-hello'
-
-export default handleAuth
+export { handleAuth as default } from 'nextjs-hello'

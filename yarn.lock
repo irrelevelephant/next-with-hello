@@ -284,8 +284,10 @@ next@^12.1.6:
     "@next/swc-win32-ia32-msvc" "12.1.6"
     "@next/swc-win32-x64-msvc" "12.1.6"
 
-nextjs-hello@../nextjs-hello:
-  version "0.1.0"
+nextjs-hello@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/nextjs-hello/-/nextjs-hello-0.1.2.tgz#5f8c49755160703cadef83f2679638a298e917df"
+  integrity sha512-Cw3Bm9Zqv2C5yzhCfF6Hj1IRxW4S+wHEfgfYI+35D1/eN8TNSDn+69HBO50q1JSOslgps64XkjxnKmZw1iramg==
   dependencies:
     cors "^2.8.5"
     iron-session "^6.1.3"
